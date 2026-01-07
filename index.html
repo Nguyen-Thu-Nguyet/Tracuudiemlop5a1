@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Tra cứu điểm lớp 5A1</title>
+<style>
+body{font-family:Arial;padding:20px;background:#f5f7fa}
+h2{text-align:center}
+input{width:100%;padding:12px;font-size:16px}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{border:1px solid #ccc;padding:8px;text-align:center}
+th{background:#2d89ef;color:white}
+</style>
+</head>
+<body>
+
+<h2>🔍 TRA CỨU ĐIỂM HỌC SINH LỚP 5A1</h2>
+
+<input type="text" placeholder="Nhập họ và tên học sinh..." onkeyup="search()">
+
+<table>
+<thead>
+<tr>
+<th>Họ và tên</th>
+<th>KT Tin học</th>
+<th>XL Tin học</th>
+<th>KT Công nghệ</th>
+<th>XL Công nghệ</th>
+</tr>
+</thead>
+<tbody id="result"></tbody>
+</table>
+
+<script>
+const data=[
+{name:"Trần Trương Khả Ái",tin:10,xlt:"T",cn:10,xlc:"T"},
+{name:"Đỗ Thị Tuyết Anh",tin:9,xlt:"T",cn:9,xlc:"T"},
+{name:"Ngô Quốc Anh",tin:9,xlt:"T",cn:9,xlc:"T"},
+{name:"Nguyễn Lê Quỳnh Anh",tin:10,xlt:"T",cn:10,xlc:"T"},
+{name:"Nguyễn Trần Bảo Anh",tin:9,xlt:"T",cn:10,xlc:"T"},
+{name:"Trần Đặng Thị Thanh Anh",tin:10,xlt:"T",cn:10,xlc:"T"},
+{name:"Ruan Kim Châu",tin:10,xlt:"T",cn:10,xlc:"T"},
+{name:"Đặng Thị Kỳ Duyên",tin:8,xlt:"H",cn:9,xlc:"T"},
+{name:"Nguyễn Thị Bảo Hân",tin:9,xlt:"T",cn:8,xlc:"H"},
+{name:"Nguyễn Thị Gia Hân",tin:8,xlt:"H",cn:9,xlc:"T"},
+{name:"Mai Thị Ngọc Hiếu",tin:9,xlt:"T",cn:10,xlc:"T"},
+{name:"Nguyễn Thị Việt Hồng",tin:9,xlt:"T",cn:10,xlc:"T"},
+{name:"Bùi Minh Khang",tin:9,xlt:"T",cn:9,xlc:"T"},
+{name:"Lê Nguyễn Vĩnh Kỳ",tin:10,xlt:"T",cn:9,xlc:"T"},
+{name:"Nguyễn Thị Bảo Ngọc",tin:10,xlt:"T",cn:9,xlc:"T"},
+{name:"Trần Bảo Ngọc",tin:10,xlt:"T",cn:10,xlc:"T"},
+{name:"Trần Như Ngọc",tin:9,xlt:"T",cn:10,xlc:"T"},
+{name:"Trần Nguyễn Duy Phương",tin:10,xlt:"T",cn:9,xlc:"T"},
+{name:"Hồ Chí Thành",tin:10,xlt:"T",cn:9,xlc:"T"},
+{name:"Dương Hạo Thiên",tin:10,xlt:"T",cn:10,xlc:"T"},
+{name:"Trần Toàn Thịnh",tin:10,xlt:"T",cn:9,xlc:"T"},
+{name:"Võ Hữu Thịnh",tin:10,xlt:"T",cn:9,xlc:"T"},
+{name:"Lâm Ngọc Trang Thư",tin:10,xlt:"T",cn:10,xlc:"T"},
+{name:"Lý Phát Triển",tin:9,xlt:"T",cn:10,xlc:"T"},
+{name:"Phan Thị Phương Trinh",tin:9,xlt:"T",cn:10,xlc:"T"},
+{name:"Lê Nguyễn Cát Tường",tin:10,xlt:"T",cn:8,xlc:"T"},
+{name:"Lê Thị Thúy Vy",tin:6,xlt:"H",cn:5,xlc:"H"},
+{name:"Phạm Ngọc Tường Vy",tin:10,xlt:"T",cn:10,xlc:"T"}
+];
+
+function search(){
+ let key=document.querySelector("input").value.toLowerCase();
+ let html="";
+ data.filter(s=>s.name.toLowerCase().includes(key))
+ .forEach(s=>{
+   html+=`<tr>
+<td>${s.name}</td>
+<td>${s.tin}</td>
+<td>${s.xlt}</td>
+<td>${s.cn}</td>
+<td>${s.xlc}</td>
+</tr>`;
+ });
+ document.getElementById("result").innerHTML=html;
+}
+</script>
+
+</body>
+</html>
